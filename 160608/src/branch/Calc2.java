@@ -22,6 +22,7 @@ public class Calc2 {
 		Scanner scan = new Scanner(System.in);
 		int num1=0,num2=0,result= 0;
 		String symbol = "",count="";
+		
 		System.out.print("첫번째 정수 입력 : ");
 		num1 = scan.nextInt();
 		System.out.print("연산자 입력 : ");
@@ -35,8 +36,9 @@ public class Calc2 {
 		case "*": result = num1*num2; break;
 		case "/": result = num1/num2; break;
 		case "%": result = num1%num2; break;
-		default: System.out.println("1~5까지만 입력바랍니다.");return;
+		default: System.out.println("+,-,*,/,% 중 하나만 입력해주세요.");return;
 		}
+
 		
 		System.out.println(num1+" "+count+" "+num2+" = "+result);
 	}
