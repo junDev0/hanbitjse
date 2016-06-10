@@ -23,8 +23,10 @@ public class Num1 {
 	public static void main(String[] args) {
 	
 		Scanner scan = new Scanner(System.in);
-		String st1="",st2="",st3="";
+		String st1="",st2="",st3="",one="",two="",three="";
 		int score1=0,score2=0,score3=0;
+
+		
 		System.out.println("※ㅇㅇ학원 시험점수표");
 		System.out.print("학생1 이름: ");
 		st1 = scan.next();
@@ -56,7 +58,7 @@ public class Num1 {
 			System.out.println("점수는 0~100까지 입력가능합니다");
 			return;
 		}
-		String one="",two="",three="";
+		
 		if(score1>score2 && score1>score3){
 			one = st1;
 			if(score2>score3){
