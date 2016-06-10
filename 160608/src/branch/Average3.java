@@ -57,10 +57,9 @@ public class Average3 {
 
 
 		total = kor+eng+math;
-		avg = (total/3);
-		
-		int num=(int) (avg*0.1);
-		switch (num) {
+		avg = (total/3); //평균값
+	
+		switch (avg/10) {
 		case 10: case 9: 
 			succ = "A";
 			break;
@@ -71,8 +70,8 @@ public class Average3 {
 			succ = "F";
 			break;
 		default:
-			
-			break;
+			System.out.println("잘못된입력입니다.");
+			return;
 		}
 		
 		/*
