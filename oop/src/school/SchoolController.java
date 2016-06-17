@@ -37,11 +37,7 @@ public class SchoolController {
 			JOptionPane.showMessageDialog(null, "등록이 완료되었습니다.");
 			break;
 			case "2":
-				JOptionPane.showMessageDialog(null, "이름 : "+st.getName()
-												+"\n나이 : "+st.getAge()+"살"
-											    +"\n아이디 : "+st.getId()
-											    +"\n성별   :"+st.getGender()
-											    +"\n등록날짜 : "+st.getRegDate() );
+				JOptionPane.showMessageDialog(null, st.toString());
 				break;
 			case "0": 
 				int ok = JOptionPane.showConfirmDialog(null, "종료하시겠습니까?");

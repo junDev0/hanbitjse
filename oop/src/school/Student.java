@@ -151,7 +151,13 @@ public class Student {
 		this.age =Integer.parseInt(currentYear)-userYear;
 		
 	}
-	
-
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "학생 [아이디=" + id + ", 비번= ****, 이름=" + name + ", 등록일=" + regDate + ", 성별=" + gender
+				+ ", 주민번호=" + ssn + ", 나이=" + age + "]";
+	}
 	
 }
