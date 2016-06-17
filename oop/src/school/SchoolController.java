@@ -21,7 +21,6 @@ public class SchoolController {
 	 */
 	public static void main(String[] args) {
 		Student st = new Student();
-	      Date date = new Date();
 	        
 	        
 	        System.out.println();
@@ -34,7 +33,8 @@ public class SchoolController {
 			String pw = JOptionPane.showInputDialog("비밀번호"); //비번빼고 접근불가.
 			String ssn = JOptionPane.showInputDialog("주민번호 ex)880101-1");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			st = new Student(id, pw, name, ssn,sdf.format(date));
+			st = new Student(id, pw, name, ssn,
+					new SimpleDateFormat("yyy-MM-dd").format(System.currentTimeMillis()));
 			JOptionPane.showMessageDialog(null, "등록이 완료되었습니다.");
 			break;
 			case "2":
