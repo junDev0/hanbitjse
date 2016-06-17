@@ -14,7 +14,6 @@ import java.text.SimpleDateFormat;
 public class Student {
 	private String id,pw,name,regDate,gender,ssn;
 	private int age;
-	public final static String SCHOOL_NAME="한빛학원";
 	
 	/**
 	 * 

@@ -5,6 +5,8 @@ package bank;
 
 import javax.swing.JOptionPane;
 
+import global.MyConstants;
+
 /**
  * @date     : 2016. 6. 15.
  * @author   : jun.dev
@@ -52,7 +54,7 @@ public class BankController {
 				JOptionPane.showMessageDialog(null, Integer.parseInt(outputMoney)+"원이 출금되었습니다.");
 				break;
 			case "5":
-				JOptionPane.showMessageDialog(null, "이름 : "+account.getName()+"\n계좌번호 : "+account.getAccountNO());
+				JOptionPane.showMessageDialog(null,MyConstants.BANK_NAME+ "\n이름 : "+account.getName()+"\n계좌번호 : "+account.getAccountNO());
 				break;
 			case "0":
 				JOptionPane.showConfirmDialog(null, "종료하시겠습니까?");
