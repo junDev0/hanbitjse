@@ -32,13 +32,13 @@ public class SchoolController {
 			String id = JOptionPane.showInputDialog("아이디");
 			String pw = JOptionPane.showInputDialog("비밀번호"); //비번빼고 접근불가.
 			String ssn = JOptionPane.showInputDialog("주민번호 ex)880101-1");
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			st = new Student(id, pw, name, ssn,
-					new SimpleDateFormat("yyy-MM-dd").format(System.currentTimeMillis()));
+					new SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis()));
 			JOptionPane.showMessageDialog(null, "등록이 완료되었습니다.");
 			break;
 			case "2":
 				JOptionPane.showMessageDialog(null, "이름 : "+st.getName()
+												+"\n나이 : "+st.getAge()+"살"
 											    +"\n아이디 : "+st.getId()
 											    +"\n성별   :"+st.getGender()
 											    +"\n등록날짜 : "+st.getRegDate() );

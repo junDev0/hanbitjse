@@ -3,6 +3,8 @@
  */
 package school;
 
+import java.text.SimpleDateFormat;
+
 /**
  * @date     : 2016. 6. 16.
  * @author   : jun.dev
@@ -22,8 +24,8 @@ public class Student {
 		this.pw = pw;
 		this.name = name;
 		this.ssn = ssn;
-		this.gender = genderResult(ssn);
 		this.regDate =regDate;
+		genderResult(ssn); //성별, 나이 계산
 	}
 	/**
 	 * 
@@ -116,13 +118,40 @@ public class Student {
 		this.age = age;
 	}
 	
-	public String genderResult(String ssn){
+	public void genderResult(String ssn){
+		/*
 		ssn = ssn.substring(7);
 		this.gender = "남자";
 		if(Integer.parseInt(ssn)%2==0){
 			this.gender = "여자";
 		}
-		return this.gender;
+		*/
+		//init
+		String [] Num= new String [2];
+		Num = ssn.split("-");
+		
+		//성별구분
+		switch (Integer.parseInt(Num[1])%2) {
+		case 0:	this.gender = "여자";
+			break;
+
+		default:this.gender = "남자";
+			break;
+		}
+		
+		//나이구분
+		Num[0] = Num[0].substring(0, 2);
+		int userYear = 1900+Integer.parseInt(Num[0]);
+		if(Num[1].equals("3")||Num[1].equals("4")){
+			userYear = 2000+Integer.parseInt(Num[0]);
+		}
+		
+
+		String currentYear = new SimpleDateFormat("yyyy").format(System.currentTimeMillis()); 
+		this.age =Integer.parseInt(currentYear)-userYear;
+		
 	}
+	
+
 	
 }
