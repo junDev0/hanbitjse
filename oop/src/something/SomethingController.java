@@ -19,7 +19,7 @@ public class SomethingController {
 	ccc(number)
 	ddd(number)이며
 
-	이중 기본값은 bbb,ccc 입니다.
+	이중 기본값은 bbb,ccc 입니다. 
 	그리고 그중에서 ccc는 보안에
 	민감한 값이고
 	bbb는 수정 가능한 값입니다.
@@ -27,8 +27,8 @@ public class SomethingController {
 	 */
 	public static void main(String[] args) {
 		Something st = new Something();
+		
 		while (true) {
-
 
 			switch (JOptionPane.showInputDialog("-메뉴- 1.등록 2.조회 0.종료")) {
 			case "1":
@@ -39,6 +39,7 @@ public class SomethingController {
 				st = new Something(bbb,Integer.parseInt(ccc));
 				st.setAaa(aaa);
 				st.setDdd(Integer.parseInt(ddd));
+				
 				break;
 			case "2":
 				JOptionPane.showMessageDialog(null, "aaa : "+st.getAaa()+
@@ -52,4 +53,6 @@ public class SomethingController {
 			}
 		}
 	}
+
+	
 }

@@ -30,10 +30,13 @@ public class AccountBean {
 	}
 	/**
 	 * 
+	 * 
+	 * 
 	 */
-	public AccountBean() {
+	public AccountBean(String name) {
 		//default constructor 기본 생성자
 		//생성자 오버로딩 
+		this.name = name;
 	}
 	public void setAccountNO() {
 		int max= 999999,min=100000;

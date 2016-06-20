@@ -24,10 +24,8 @@ public class Something {
 	 * 
 	 */
 	public Something() {
+		// TODO Auto-generated constructor stub
 	}
-	/**
-	 * @return the aaa
-	 */
 	public String getAaa() {
 		return aaa;
 	}

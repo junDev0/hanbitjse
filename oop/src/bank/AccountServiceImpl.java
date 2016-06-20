@@ -36,7 +36,7 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public String withdraw(int output) {
 		String result = "잔액부족입니다.";
-		int money = account.getMoney();
+		int money = account.getMoney()+1000;
 		if(output <= money){
 			money-=output;
 			account.setMoney(money);
