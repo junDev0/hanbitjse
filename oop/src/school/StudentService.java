@@ -10,8 +10,8 @@ package school;
  * @story    : 
  */
 public interface StudentService {
-	public void regist();
-	public void findStudent();
-	public void update();
-	public void delete();
+	public void registStudent(String name,String id, String pw,  String ssn,String regDate);
+	public String showStudent();
+	public String updateStudent(String pw); //pw만 수정가능
+	public String deleteStudent();
 }

@@ -12,6 +12,7 @@ package bank;
 public class AccountServiceImpl implements AccountService {
 	//1.개설 2.입금 3.조회. 4.출금 5.통장내역 6.통장해지 0.종료
 	AccountBean account;
+	
 	//1.개설
 	@Override
 	public void openAccount(String name, String id, String pw) {

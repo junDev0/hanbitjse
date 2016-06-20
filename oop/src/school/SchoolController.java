@@ -20,25 +20,29 @@ public class SchoolController {
 	 * 2.조회 : name,id,gender 조회
 	 */
 	public static void main(String[] args) {
-		Student st = new Student();
+	    StudentServiceImpl service = new StudentServiceImpl();    
 	        
-	        
-	        System.out.println();
 		while (true) {
 			
-			switch (JOptionPane.showInputDialog("1.등록 2.조회 0.종료")) {
+			switch (JOptionPane.showInputDialog("1.등록 2.보기 3.수정 4.삭제 0.종료")) {
 			case "1":
-			String name = JOptionPane.showInputDialog("이름");
-			String id = JOptionPane.showInputDialog("아이디");
-			String pw = JOptionPane.showInputDialog("비밀번호"); //비번빼고 접근불가.
-			String ssn = JOptionPane.showInputDialog("주민번호 ex)880101-1");
-			st = new Student(id, pw, name, ssn,
+			String spec = JOptionPane.showInputDialog("이름,아이디,비밀번호,주민번호 ex)880101-1");
+			String specArr[] = spec.split(",");
+			service.registStudent(specArr[0], specArr[1], specArr[2], specArr[3],
 					new SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis()));
 			JOptionPane.showMessageDialog(null, "등록이 완료되었습니다.");
 			break;
 			case "2":
-				JOptionPane.showMessageDialog(null, st.toString());
+				JOptionPane.showMessageDialog(null, service.showStudent());
 				break;
+			case "3":
+				String pwModify = JOptionPane.showInputDialog("새비밀번호를 입력하세요");
+				JOptionPane.showMessageDialog(null,service.updateStudent(pwModify));
+				break;
+			case "4":
+				JOptionPane.showMessageDialog(null, service.deleteStudent());
+				break;
+				
 			case "0": 
 				int ok = JOptionPane.showConfirmDialog(null, "종료하시겠습니까?");
 				if(ok == 0){
