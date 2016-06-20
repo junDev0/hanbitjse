@@ -26,8 +26,12 @@ public class StudentServiceImpl implements StudentService{
 
 	@Override
 	public String updateStudent(String pw) {
+		String result = "계정을 먼저 만들어주세요";
+		if(st.getPw()!=null){
 		st.setPw(pw);
-		return "비밀번호 수정이 완료되었습니다.";
+		result = "비밀번호 수정이 완료되었습니다.";
+		}
+		return result;
 	}
 
 	@Override

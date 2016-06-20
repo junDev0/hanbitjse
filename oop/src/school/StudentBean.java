@@ -19,9 +19,9 @@ public class StudentBean {
 	 * 
 	 */
 	public StudentBean(String name,String id, String pw,  String ssn,String regDate) {
+		this.name = name;
 		this.id = id;
 		this.pw = pw;
-		this.name = name;
 		this.ssn = ssn;
 		this.regDate =regDate;
 		genderResult(ssn); //성별, 나이 계산
@@ -101,9 +101,7 @@ public class StudentBean {
 		this.age =Integer.parseInt(currentYear)-userYear;
 		
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
+
 	@Override
 	public String toString() {
 		return "학생 [아이디=" + id + ", 비번= ****, 이름=" + name + ", 등록일=" + regDate + ", 성별=" + gender
