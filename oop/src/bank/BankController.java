@@ -16,45 +16,31 @@ import global.MyConstants;
 public class BankController {
 	String s = "";
 	public static void main(String[] args) {
-		Account account = null;
-		//showInputDialog 스캐너
-		//showMessageDialog 출력 sysout
-		//showConfirmDialog
-		
+		AccountServiceImpl service = new AccountServiceImpl();
 		while (true) {
-			switch (JOptionPane.showInputDialog("1.개설. 2.입금 3.조회. 4.출금 5.계좌번호 0.종료")) {
+			switch (JOptionPane.showInputDialog("1.개설. 2.입금 3.조회. 4.출금 5.통장내역 6.통장해지 0.종료")) {
 			case "1":
-				int ok = JOptionPane.showConfirmDialog(null, "계좌개설하시겠습니까?");
-				if(ok==0){
-					String name = JOptionPane.showInputDialog(null,"이름 입력 : ");
-					account = new Account(name);
-				}else{
-					continue;
-				}
-				
-				JOptionPane.showMessageDialog(null, "계좌가 생성되었습니다.");
+				String spec = JOptionPane.showInputDialog("이름,ID,PW");
+				String result[] = spec.split(",");
+				service.openAccount(result[0],result[1],result[2]);
 				break;
 			case "2":
 				String inputMoney = JOptionPane.showInputDialog("입금액?");
-				account.setMoney(Integer.parseInt(inputMoney));
-				JOptionPane.showMessageDialog(null, "입금액 : "+Integer.parseInt(inputMoney)+"원");
+				service.deposit(Integer.parseInt(inputMoney));
+				JOptionPane.showMessageDialog(null, "잔액 : "+service.findAccount()+"원");
 				break;
 			case "3":
-				JOptionPane.showMessageDialog(null, "잔액 : "+account.getMoney()+"원");
+				JOptionPane.showMessageDialog(null, "잔액 : "+service.findAccount()+"원");
 				break;
 			case "4":
 				String outputMoney = JOptionPane.showInputDialog("출금액?");
-				if(Integer.parseInt(outputMoney) < 0 ){
-					JOptionPane.showMessageDialog(null, "-는 들어갈수없습니다.");
-				}
-				if(Integer.parseInt(outputMoney) > account.getMoney() ){
-					JOptionPane.showMessageDialog(null, "잔액이 부족합니다.");
-				}
-				account.setMoney(account.getMoney()-Integer.parseInt(outputMoney));
-				JOptionPane.showMessageDialog(null, Integer.parseInt(outputMoney)+"원이 출금되었습니다.");
+				JOptionPane.showMessageDialog(null, service.withdraw(Integer.parseInt(outputMoney)));
 				break;
 			case "5":
-				JOptionPane.showMessageDialog(null,MyConstants.BANK_NAME+ "\n이름 : "+account.getName()+"\n계좌번호 : "+account.getAccountNO());
+				JOptionPane.showMessageDialog(null,service.showAccount());
+				break;
+			case "6":
+				JOptionPane.showMessageDialog(null,service.deleteAccount());
 				break;
 			case "0":
 				JOptionPane.showConfirmDialog(null, "종료하시겠습니까?");
