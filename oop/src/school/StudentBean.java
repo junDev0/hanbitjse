@@ -63,7 +63,7 @@ public class StudentBean {
 		this.age = age;
 	}
 	
-	public void genderResult(String ssn){
+	public void genderResult(String ssn){ //주민번호를 파라미터로 받아 나이 및 성별을 구하는 메소드
 		/*
 		ssn = ssn.substring(7);
 		this.gender = "남자";
@@ -71,11 +71,13 @@ public class StudentBean {
 			this.gender = "여자";
 		}
 		*/
-		//init
+		
+		// 주민번호 ex)881010-1 을 split으로 "-"를 기준 나누어서 
+		//Num[0] = "881010" Num[1]="1" 나눈다.   
 		String [] Num= new String [2];
 		Num = ssn.split("-");
 		
-		//성별구분
+		//성별구분 
 		switch (Integer.parseInt(Num[1])%2) {
 		case 0:	this.gender = "여자";
 			break;
@@ -84,7 +86,10 @@ public class StudentBean {
 			break;
 		}
 		
-		//나이구분
+		//나이구분 substring은 문자열 변수로 사용가능 charAt과 유사한 기능을함
+		//ex) apple 를 substring을 사용할경우
+		//substring(3) 숫자를 하나 넣었을 경우 해당 자릿수의 문자를 가져옴 결과)l
+		//substring(0,2) 숫자를 두개 넣었을 경우 앞자리는 시작범위, 뒷자리는 마지막범위 결과)app 
 		Num[0] = Num[0].substring(0, 2);
 		int userYear = 1900+Integer.parseInt(Num[0]);
 		if(Num[1].equals("3")||Num[1].equals("4")){
