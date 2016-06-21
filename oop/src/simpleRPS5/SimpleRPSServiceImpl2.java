@@ -1,6 +1,6 @@
-package simpleRPS4;
+package simpleRPS5;
 
-public class SimpleRPSServiceImpl implements SimpleRPSService {
+public class SimpleRPSServiceImpl2 implements SimpleRPSService {
 	SimpleRPSBean bean = new SimpleRPSBean();
 	@Override
 	public String playgame(int player) {

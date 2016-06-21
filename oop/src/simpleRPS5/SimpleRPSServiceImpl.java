@@ -1,4 +1,4 @@
-package simpleRPS4;
+package simpleRPS5;
 
 public class SimpleRPSServiceImpl implements SimpleRPSService {
 	SimpleRPSBean bean = new SimpleRPSBean();
@@ -12,18 +12,10 @@ public class SimpleRPSServiceImpl implements SimpleRPSService {
 		int win = 0;
 		String winner = "";
 		if(com==ply){
-			return "TIE";
+			return "WIN";
+		}else{
+			return "LOSE";
 		}
-		switch (Math.abs(ply-com)) {
-		case 1:win=(ply>com)?ply:com;break;
-		case 2:win=(ply>com)?com:ply;break;
-
-		default:
-			break;
-		}
-		winner = (win==ply)?"플레이어":"컴퓨터";
-		result = winner+"승리";
-		return result;	
 	}
 
 
