@@ -15,9 +15,7 @@ public class StudentBean {
 	private String id,pw,name,regDate,gender,ssn;
 	private int age;
 	
-	/**
-	 * 
-	 */
+
 	public StudentBean(String name,String id, String pw,  String ssn,String regDate) {
 		this.name = name;
 		this.id = id;
@@ -71,7 +69,6 @@ public class StudentBean {
 			this.gender = "여자";
 		}
 		*/
-		
 		// 주민번호 ex)881010-1 을 split으로 "-"를 기준 나누어서 
 		//Num[0] = "881010" Num[1]="1" 나눈다.   
 		String [] Num= new String [2];

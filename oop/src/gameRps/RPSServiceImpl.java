@@ -1,5 +1,7 @@
 package gameRps;
 
+import java.util.Random;
+
 public class RPSServiceImpl implements RPSService{
 
 	RPSBean rps;
@@ -13,11 +15,20 @@ public class RPSServiceImpl implements RPSService{
 	@Override
 	public void setComputerValue() {
 		rps.setComp((int)((Math.random()*3)+1));
-
 	}
 
 	@Override
 	public void whoWin() {
+		//숫자로 비교
+		int user = rps.getPlayNum();
+		int comp = rps.getCompNum();
+		switch ((user-comp+3)%3) {
+		case 0:rps.setResult("비김!");break;
+		case 1:rps.setResult("유저승리");break;
+		case 2:rps.setResult("유저패배!");break;
+		}
+		
+		/* 문자열로 비교
 		if(rps.getPlay().equals(rps.getComp())){
 			rps.setResult("비김");
 		}else{
@@ -42,6 +53,8 @@ public class RPSServiceImpl implements RPSService{
 				break;
 }
 		}
+		*/
+
 	}
 
 	@Override

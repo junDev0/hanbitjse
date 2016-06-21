@@ -2,10 +2,12 @@ package gameRps;
 
 public class RPSBean {
 	private String play,comp,result;
+	private int playNum,compNum;
 
 	
 
 	public void setPlay(int play) {
+		this.playNum = play;
 		switch (play) {
 		case 1:
 			this.play="가위";
@@ -20,6 +22,7 @@ public class RPSBean {
 	}
 
 	public void setComp(int comp) {
+		this.compNum = comp;
 		switch (comp) {
 		case 1:
 			this.comp="가위";
@@ -31,6 +34,14 @@ public class RPSBean {
 			this.comp="보";
 			break;
 		}
+	}
+
+	public void setPlayNum(int playNum) {
+		this.playNum = playNum;
+	}
+
+	public void setCompNum(int compNum) {
+		this.compNum = compNum;
 	}
 
 	public String getPlay() {
@@ -47,6 +58,14 @@ public class RPSBean {
 
 	public void setResult(String result) {
 		this.result = result;
+	}
+
+	public int getPlayNum() {
+		return playNum;
+	}
+
+	public int getCompNum() {
+		return compNum;
 	}
 
 	/* (non-Javadoc)

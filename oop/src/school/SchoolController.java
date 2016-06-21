@@ -18,6 +18,7 @@ public class SchoolController {
 	/**
 	 * 1.등록 : ssn,id,pw,name,gender 입력받음 ssn:주민번호
 	 * 2.조회 : name,id,gender 조회
+	 * 
 	 */
 	public static void main(String[] args) {
 	    StudentServiceImpl service = new StudentServiceImpl();    
