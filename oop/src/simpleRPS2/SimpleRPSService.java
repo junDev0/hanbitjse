@@ -1,4 +1,4 @@
-package simplRPS2;
+package simpleRPS2;
 
 public interface SimpleRPSService {
 	public abstract String playgame(String player);

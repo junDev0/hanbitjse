@@ -1,4 +1,4 @@
-package simplRPS2;
+package simpleRPS2;
 
 public class SimpleRPSServiceImpl implements SimpleRPSService {
 
@@ -44,7 +44,7 @@ public class SimpleRPSServiceImpl implements SimpleRPSService {
 	@Override
 	public String getResult(String result) {
 		// TODO Auto-generated method stub
-		return null;
+		return "플레이어는 : " + result;
 	}
 
 }

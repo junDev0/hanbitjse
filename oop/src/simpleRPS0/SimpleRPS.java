@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  * @fileName : SimpleRPS.java
  * @story    : 
  */
-public class SimpleRPSController {
+public class SimpleRPS {
 	public static void main(String[] args) {
 		int comp=0,player=0; // 컴퓨터, 유저 
 		String result = ""; // 결과
