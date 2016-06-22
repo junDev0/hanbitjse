@@ -66,7 +66,7 @@ public class GradeServiceImpl implements GradeService {
 		return bean.toString()
 			+"\n총점 = "+this.gradeTotal()
 			+"\n평균 = "+this.gradeAvg()
-			+"\n학점 = "+result+"]";
+			+"\n학점 = "+result+"";
 	}
 
 }

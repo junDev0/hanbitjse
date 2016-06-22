@@ -6,7 +6,7 @@ package grade;
  * @fileName : GradeBean.java
  * @story    : 
  */
-public class GradeBean {
+public class GradeBean { //입력된것으 정
 	private int kor,eng,math;
 	private String name;
 
