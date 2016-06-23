@@ -1,6 +1,9 @@
 package collection;
 
 import java.util.HashSet;
+import java.util.Set;
+
+import school.StudentBean;
 
 /**
  * @date     : 2016. 6. 23.
@@ -12,19 +15,16 @@ public class HashSetEx {
 	public static void main(String[] args) {
 		String [] str = {"Java","Beans","Java","XML"};
 		
-		HashSet<String> hs1 = new HashSet<String>();
-		HashSet<String> hs2 = new HashSet<String>();
+		Set<StudentBean> stu = new HashSet<StudentBean>();
 
-		for(String n : str){
-			if(!hs1.add(n)){
-				hs2.add(n);
-			}
-		}
+		StudentBean hong = new StudentBean("홍길동", "hong", "123", "800101-1", "2016-06-23");
+		StudentBean kim = new StudentBean("김유신", "kim", "321", "900101-2", "2016-06-23");
+		StudentBean lee = new StudentBean("이순신", "lee", "213", "700101-1", "2016-06-23");
 		
-		System.out.println("hs1 : "+hs1);
-		hs1.removeAll(hs2);
-		System.out.println("hs1 : "+hs1);
-		System.out.println("hs2 : "+hs2);
+		
+		stu.add(hong);
+		stu.add(kim);
+		stu.add(lee);
 		
 	}
 }
