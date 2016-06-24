@@ -1,5 +1,7 @@
 package lotto;
 
+import java.util.Arrays;
+
 public class LottoBallServiceImpl implements LottoBallService{
 	private int[] lotto;
 	@Override
@@ -17,12 +19,11 @@ public class LottoBallServiceImpl implements LottoBallService{
 				}
 			}
 			i++;
-			if(i==6){
-				i=0;
+			if(i==6){ // while문 조건식에 넣어서도 가능 while(i<6){} 이점: if문,break 안써도됨
 				break;
 			}
 		}
-		
+		Arrays.sort(lotto);
 		
 		/*
 		for (int i = 0; i < lotto.length; i++) { //이중for문 사용시

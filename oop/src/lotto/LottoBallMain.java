@@ -23,7 +23,7 @@ public class LottoBallMain {
 				int[] lotto = service.getLottoBall();
 				System.out.println("=== 로또추첨 ===");
 				for (int i = 0; i < lotto.length; i++) {
-					Arrays.sort(lotto);
+					
 					sb.append(lotto[i]+"\t");
 				}
 				System.out.println("\n"+sb);
