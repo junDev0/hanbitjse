@@ -30,11 +30,17 @@ public class StudentBean {
 	public String getPw() {
 		return pw;
 	}
+	public String getId(){
+		return id;
+	}
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getName(){
+		return name;
 	}
 	public String getRegDate() {
 		return regDate;

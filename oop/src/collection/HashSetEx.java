@@ -25,6 +25,6 @@ public class HashSetEx {
 		stu.add(hong);
 		stu.add(kim);
 		stu.add(lee);
-		
+		System.out.println();
 	}
 }

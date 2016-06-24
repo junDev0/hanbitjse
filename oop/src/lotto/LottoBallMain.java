@@ -9,33 +9,25 @@ import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
- * @date     : 2016. 6. 23.
+ * @date     : 2016. 6. 24.
  * @author   : jun.dev
- * @fileName : LottoController.java
+ * @fileName : SBSMain.java
  * @story    : 
  */
-public class LottoMain {
+public class LottoBallMain {
 	public static void main(String[] args) {
 		LottoBean lot = new LottoBean();
-		LottoService service = new LottoServiceImpl();
+		LottoBallService service = new LottoBallServiceImpl();
 				StringBuffer sb= new StringBuffer();
-				String money = JOptionPane.showInputDialog("얼마치 구입?");
-				char moneyChar = money.charAt(0);
-				lot.setMoney(Integer.parseInt(String.valueOf(moneyChar)));
-				service.setLottos(lot);
-				int[][] lottos = service.getLottos();
-				System.out.println("=== 로또번호 ===");
-				for (int i = 0; i < lottos.length; i++) {
-					//service.sort(lottos[i]);
-					Arrays.sort(lottos[i]);
-					for (int j = 0; j < lottos[i].length; j++) {
-						sb.append(lottos[i][j]+"\t");
-					}
-					sb.append("\n");
+				service.setLottoBall(lot);
+				int[] lotto = service.getLottoBall();
+				System.out.println("=== 로또추첨 ===");
+				for (int i = 0; i < lotto.length; i++) {
+					Arrays.sort(lotto);
+					sb.append(lotto[i]+"\t");
 				}
 				System.out.println("\n"+sb);
-				int lottoSerialNo = (int) (Math.random()*999999+100000);
-				File output = new File("C:\\eclipse\\lotto\\"+lottoSerialNo+".txt");
+				File output = new File("C:\\eclipse\\lotto\\lottoball.txt");
 				BufferedWriter bw = null;
 				String[]myLotto = sb.toString().split("/");
 				

@@ -1,4 +1,4 @@
-package lotto;
+package lotto2;
 
 import java.io.BufferedWriter;
 import java.io.File;
