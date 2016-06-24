@@ -19,8 +19,8 @@ public class LottoBallMain {
 		LottoBean lot = new LottoBean();
 		LottoBallService service = new LottoBallServiceImpl();
 				StringBuffer sb= new StringBuffer();
-				service.setLottoBall(lot);
-				int[] lotto = service.getLottoBall();
+				service.setLottoBall(lot); // 로또 번호 생성 및 정렬
+				int[] lotto = service.getLottoBall(); // 생성된 로또 번호 가져오기.
 				System.out.println("=== 로또추첨 ===");
 				for (int i = 0; i < lotto.length; i++) {
 					
