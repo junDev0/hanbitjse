@@ -33,10 +33,10 @@ public class AccountBean {
 	 * 
 	 * 
 	 */
-	public AccountBean(String name) {
+	public AccountBean() {
 		//default constructor 기본 생성자
 		//생성자 오버로딩 
-		this.name = name;
+		
 	}
 	public void setAccountNO() {
 		int max= 999999,min=100000;
@@ -50,6 +50,9 @@ public class AccountBean {
 	}
 	public void setBankName(String bankName) {
 		this.bankName = bankName;
+	}
+	public void setId(String id){
+		this.id = id;
 	}
 	public void setPw(String pw) {
 		this.pw = pw;
@@ -91,7 +94,7 @@ public class AccountBean {
 			+ ", 이름 = " + name
 			+ ", 잔액 = " + money
 			+ ", 비번 = " + pw
-			+ ", 아이디 = " + id;
+			+ ", 아이디 = " + id+"]";
 	}
 	
 }
