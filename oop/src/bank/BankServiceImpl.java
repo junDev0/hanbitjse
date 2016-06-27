@@ -37,6 +37,7 @@ public class BankServiceImpl implements BankService{
 		for (int i = 0; i < list.size(); i++) {
 			if(accountNo.equals(String.valueOf(list.get(i).getAccountNO()))){
 				result = list.get(i).toString();
+				break;
 			}
 		}
 		return result;
