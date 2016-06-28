@@ -9,26 +9,26 @@ package kaup;
  * @fileName : kaup.java
  * @story    : 
  */
-public class Kaup {
-	String name,height,weight;
-	
+public class Kaup { // 이름, 키, 몸무게에 대한 정보 저장. 미화씨랑 같은조건이에요.
+	private String name;
+	private int height,weight;
 		public void setName(String name){
 			this.name = name;
 		}
-		public void setHeight(String height){
+		public void setHeight(int height){
 			this.height = height;
 		}
-		public void setWeight(String weight){
+		public void setWeight(int weight){
 			this.weight = weight;
 		}
 	
 		public String getName() {
 			return name;
 		}
-		public String getHeight() {
+		public int getHeight() {
 			return height;
 		}
-		public String getWeight() {
+		public int getWeight() {
 			return weight;
 		}
 		
@@ -36,8 +36,8 @@ public class Kaup {
 
 		public String execute(){
 			String result = "";
-			double height = Double.parseDouble(this.height),
-					weight = Double.parseDouble(this.weight);
+			double height = this.height,
+					weight = this.weight;
 			double kaup = weight / (height / 100) / (weight / 100);
 			
 			if (kaup < 18.5) {
